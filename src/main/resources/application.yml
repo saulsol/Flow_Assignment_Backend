@@ -19,5 +19,5 @@ spring:
       max-request-size: 10MB        # 최대 요청 크기 설정
       file-size-threshold: 2KB      # 파일을 디스크에 저장하기 전에 메모리에 보관할 최소 크기 설정
 
-file:
-  upload-dir: ${UPLOAD_DIR}
+#file:
+#  upload-dir: ${UPLOAD_DIR}
