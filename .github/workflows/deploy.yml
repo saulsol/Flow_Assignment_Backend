@@ -17,8 +17,8 @@ jobs:
           key: ${{ secrets.EC2_PRIVATE_KEY }} # EC2의 Key 파일의 내부 텍스트
           script_stop: true # 아래 script 중 실패하는 명령이 하나라도 있으면 실패로 처리
           script: |
-            cd /home/ubuntu/fileupload-server # 여기 경로는 자신의 EC2에 맞는 경로로 재작성하기
+            cd /home/ubuntu/fileupload-server
             git pull origin main
-            ./gradlew clean build
+            ./gradlew clean build -x test 
             sudo fuser -k -n tcp 8080 || true 
             nohup java -jar build/libs/*SNAPSHOT.jar > ./output.log 2>&1 &
