@@ -18,7 +18,7 @@ public class CorsConfig {
 
         config.setAllowedOrigins(List.of(
                 "http://localhost:3000", // next.js 로컬
-                "https://flow-assignment-frontend.vercel.app/"
+                "https://flow-assignment-frontend.vercel.app/" // vercel next.js
         ));
         // 허용 메서드
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
