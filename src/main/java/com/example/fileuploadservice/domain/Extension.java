@@ -1,10 +1,7 @@
 package com.example.fileuploadservice.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "extensions")
@@ -24,4 +21,8 @@ public class Extension {
     private boolean isUsed; // 사용여부
 
     private boolean isFixed; // 0 : 고정, 1 : 커스텀
+
+    public void changeIsUsed(boolean changedIsUsed){
+        this.isUsed = changedIsUsed;
+    }
 }

@@ -1,15 +1,11 @@
 package com.example.fileuploadservice.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
-public class FixedExtensionDTO {
+public class ReqFixedExtensionIsUsed {
 
     private Long id;
-
-    private String extensionName;
 
     private boolean isUsed; // 사용여부
 }

@@ -1,7 +1,9 @@
 package com.example.fileuploadservice.service;
 
+import com.example.fileuploadservice.domain.Extension;
 import com.example.fileuploadservice.dto.FixedExtensionDTO;
-import com.example.fileuploadservice.repository.FixedExtensionRepository;
+import com.example.fileuploadservice.dto.ReqFixedExtensionIsUsed;
+import com.example.fileuploadservice.repository.ExtensionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,12 +15,12 @@ import java.util.List;
 @Transactional
 public class FixedExtensionService {
 
-    private final FixedExtensionRepository fixedExtensionRepository;
+    private final ExtensionRepository extensionRepository;
 
     // 고정 확장자 전체 조회
     @Transactional(readOnly = true)
     public List<FixedExtensionDTO> findAllFixedExtensions(){
-        return fixedExtensionRepository.findFixedExtensions()
+        return extensionRepository.findFixedExtensions()
                 .stream()
                 .map(e -> new FixedExtensionDTO(
                         e.getId(),
@@ -26,6 +28,16 @@ public class FixedExtensionService {
                         e.isUsed()
                 ))
                 .toList();
+    }
+
+    // 고정 확정자 사용 여부 업데이트
+    public void updateFixedExtensionIsUsed(ReqFixedExtensionIsUsed reqFixedExtensionIsUsed){
+        Extension extension = extensionRepository
+                .findById(reqFixedExtensionIsUsed.getId())
+                .orElseThrow(() -> new IllegalArgumentException("확장자가 존재하지 않습니다."));
+
+        extension.changeIsUsed(reqFixedExtensionIsUsed.isUsed());
+        extensionRepository.save(extension);
     }
 
 
