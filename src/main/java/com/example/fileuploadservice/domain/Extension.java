@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "extentions")
+@Table(name = "extensions")
 @Getter
 @Builder
 @AllArgsConstructor
@@ -20,6 +20,8 @@ public class Extension {
 
     @Column(nullable=false, length=20)
     private String extensionName;
+
+    private boolean isUsed; // 사용여부
 
     private boolean isFixed; // 0 : 고정, 1 : 커스텀
 }
