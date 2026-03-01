@@ -1,5 +1,6 @@
 package com.example.fileuploadservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -9,7 +10,9 @@ public class FixedExtensionDTO {
 
     private Long id;
 
+    @JsonProperty("name")
     private String extensionName;
 
+    @JsonProperty("checked")
     private boolean isUsed; // 사용여부
 }

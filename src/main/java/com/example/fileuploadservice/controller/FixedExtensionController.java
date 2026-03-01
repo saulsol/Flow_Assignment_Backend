@@ -1,7 +1,7 @@
 package com.example.fileuploadservice.controller;
 
 import com.example.fileuploadservice.dto.FixedExtensionDTO;
-import com.example.fileuploadservice.dto.ReqFixedExtensionIsUsed;
+import com.example.fileuploadservice.dto.ReqFixedExtensionIsUsedDTO;
 import com.example.fileuploadservice.service.FixedExtensionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -25,9 +25,9 @@ public class FixedExtensionController {
 
     // 고정 확정자 부분 업데이트
     @PatchMapping("/fixed")
-    public ResponseEntity<String> updateFixedExtensionIsUsed(@RequestBody ReqFixedExtensionIsUsed request) {
+    public ResponseEntity<Void> updateFixedExtensionIsUsed(@RequestBody ReqFixedExtensionIsUsedDTO request) {
         extensionService.updateFixedExtensionIsUsed(request);
-        return ResponseEntity.ok("변경되었습니다.");
+        return ResponseEntity.ok().build();
     }
 
 }

@@ -1,11 +1,13 @@
 package com.example.fileuploadservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class ReqFixedExtensionIsUsed {
+public class ReqFixedExtensionIsUsedDTO {
 
     private Long id;
 
+    @JsonProperty("checked")
     private boolean isUsed; // 사용여부
 }

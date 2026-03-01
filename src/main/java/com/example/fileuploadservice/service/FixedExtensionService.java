@@ -2,7 +2,7 @@ package com.example.fileuploadservice.service;
 
 import com.example.fileuploadservice.domain.Extension;
 import com.example.fileuploadservice.dto.FixedExtensionDTO;
-import com.example.fileuploadservice.dto.ReqFixedExtensionIsUsed;
+import com.example.fileuploadservice.dto.ReqFixedExtensionIsUsedDTO;
 import com.example.fileuploadservice.repository.ExtensionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,12 +31,12 @@ public class FixedExtensionService {
     }
 
     // 고정 확정자 사용 여부 업데이트
-    public void updateFixedExtensionIsUsed(ReqFixedExtensionIsUsed reqFixedExtensionIsUsed){
+    public void updateFixedExtensionIsUsed(ReqFixedExtensionIsUsedDTO reqFixedExtensionIsUsedDTO){
         Extension extension = extensionRepository
-                .findById(reqFixedExtensionIsUsed.getId())
+                .findById(reqFixedExtensionIsUsedDTO.getId())
                 .orElseThrow(() -> new IllegalArgumentException("확장자가 존재하지 않습니다."));
 
-        extension.changeIsUsed(reqFixedExtensionIsUsed.isUsed());
+        extension.changeIsUsed(reqFixedExtensionIsUsedDTO.isUsed());
         extensionRepository.save(extension);
     }
 
