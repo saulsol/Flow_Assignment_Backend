@@ -1,8 +1,8 @@
 package com.example.fileuploadservice.service;
 
 import com.example.fileuploadservice.domain.Extension;
-import com.example.fileuploadservice.dto.FixedExtensionDTO;
-import com.example.fileuploadservice.dto.ReqFixedExtensionIsUsedDTO;
+import com.example.fileuploadservice.dto.fixed.FixedExtensionDTO;
+import com.example.fileuploadservice.dto.fixed.ReqFixedExtensionIsUsedDTO;
 import com.example.fileuploadservice.repository.ExtensionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

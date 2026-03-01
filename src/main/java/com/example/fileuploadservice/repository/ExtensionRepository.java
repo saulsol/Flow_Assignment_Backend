@@ -12,4 +12,7 @@ import java.util.List;
 public interface ExtensionRepository extends JpaRepository<Extension, Long> {
     @Query("SELECT e FROM Extension e WHERE e.isFixed = true")
     List<Extension> findFixedExtensions();
+
+    @Query("SELECT e FROM Extension e WHERE e.isFixed = false")
+    List<Extension> findCustomExtensions();
 }

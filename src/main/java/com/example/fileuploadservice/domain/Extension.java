@@ -20,7 +20,7 @@ public class Extension {
 
     private boolean isUsed; // 사용여부
 
-    private boolean isFixed; // 0 : 고정, 1 : 커스텀
+    private boolean isFixed; // true : 고정, false : 커스텀
 
     public void changeIsUsed(boolean changedIsUsed){
         this.isUsed = changedIsUsed;
