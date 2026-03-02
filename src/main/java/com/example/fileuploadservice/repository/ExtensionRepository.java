@@ -15,4 +15,6 @@ public interface ExtensionRepository extends JpaRepository<Extension, Long> {
 
     @Query("SELECT e FROM Extension e WHERE e.isFixed = false")
     List<Extension> findCustomExtensions();
+    @Query("SELECT e.extensionName FROM Extension e WHERE e.isUsed = true")
+    List<String> findAllExtensions();
 }

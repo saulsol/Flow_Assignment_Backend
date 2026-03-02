@@ -58,6 +58,7 @@ public class ExtensionService {
         Extension newCustomExtension = Extension.builder()
                 .extensionName(customExtensionDTO.getExtensionName())
                 .isFixed(false) // 커스텀 확장자
+                .isUsed(true) // 커스텀 확장자는 사용여부 기본 true
                 .build();
         extensionRepository.save(newCustomExtension);
     }

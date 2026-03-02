@@ -33,7 +33,6 @@ public class FileService {
     @Transactional(rollbackFor = IOException.class)
     public void saveFile(FileDTO fileDTO) throws IOException {
         String customFileName = customFileUtil.saveFile(fileDTO.getMultipartFile());
-
         FileEntity fileEntity = FileEntity.builder()
                 .fileName(fileDTO.getFileName()) // 유저가 넘긴 파일명
                 .savedName(customFileName) // 실제 파일명
@@ -41,6 +40,7 @@ public class FileService {
 
         fileEntityRepository.save(fileEntity);
     }
+
     @Transactional(rollbackFor = IOException.class)
     public void deleteFile(Long id) throws IOException{
         FileEntity entity = fileEntityRepository
@@ -50,8 +50,5 @@ public class FileService {
 
         fileEntityRepository.deleteById(id);
     }
-
-
-
 
 }

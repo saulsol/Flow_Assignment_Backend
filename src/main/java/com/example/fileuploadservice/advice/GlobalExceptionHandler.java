@@ -21,10 +21,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(IOException.class)
     public ResponseEntity<ErrorMessage> handleIOException(IOException exception) {
-        ErrorMessage errorMessage = new ErrorMessage(
-                List.of("파일 처리 중 오류가 발생했습니다.", exception.getMessage())
-        );
-
+        ErrorMessage errorMessage = new ErrorMessage(List.of("파일 처리 중 오류가 발생했습니다.", exception.getMessage()));
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(errorMessage);
