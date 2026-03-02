@@ -28,5 +28,5 @@ jobs:
                --spring.datasource.url="${{ secrets.DB_URL }}" \
                --spring.datasource.username="${{ secrets.DB_USERNAME }}" \
                --spring.datasource.password="${{ secrets.DB_PASSWORD }}" \
-               --file.upload-dir="${{secrets.UPLOAD_DIR}}" \  
+               --file.upload-dir="${{secrets.UPLOAD_DIR}}" \
                > output.log 2>&1 &
