@@ -1,8 +1,8 @@
 package com.example.fileuploadservice.controller;
 
-import com.example.fileuploadservice.dto.fixed.FixedExtensionDTO;
-import com.example.fileuploadservice.dto.fixed.ReqFixedExtensionIsUsedDTO;
-import com.example.fileuploadservice.service.FixedExtensionService;
+import com.example.fileuploadservice.dto.fixedExtension.FixedExtensionDTO;
+import com.example.fileuploadservice.dto.fixedExtension.ReqFixedExtensionIsUsedDTO;
+import com.example.fileuploadservice.service.ExtensionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api/fixedExtensions")
 public class FixedExtensionController {
 
-    private final FixedExtensionService extensionService;
+    private final ExtensionService extensionService;
 
     // 전체 고정 확장자 조회
     @GetMapping

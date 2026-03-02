@@ -1,4 +1,4 @@
-package com.example.fileuploadservice.dto.custom;
+package com.example.fileuploadservice.dto.customExtension;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
