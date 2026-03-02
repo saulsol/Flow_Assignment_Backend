@@ -21,6 +21,7 @@ jobs:
           script: |
             cd /home/ubuntu/fileupload-server
             git pull origin main
+            chmod +x gradlew
             ./gradlew clean build -x test 
             sudo fuser -k -n tcp 8080 || true 
             nohup java -jar build/libs/*SNAPSHOT.jar \
